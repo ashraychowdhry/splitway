@@ -4,6 +4,7 @@ from flask_login import current_user
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from splitway.models import User
+from wtforms.fields.html5 import DateTimeLocalField
 
 
 class RegistrationForm(FlaskForm):
@@ -29,3 +30,11 @@ class LoginForm(FlaskForm):
                         validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Login')
+
+class SearchForm(FlaskForm):
+    
+    current_location = StringField('Current Location', validators=[DataRequired()])
+    destination = StringField('Destination', validators=[DataRequired()])
+    time = DateTimeLocalField('Date/Time', format="%Y-%m-%dT%H:%M")
+    #time = StringField('Date/Time MM/DD/YYYY HH:MM', validators=[DataRequired()])
+    submit = SubmitField('Search')

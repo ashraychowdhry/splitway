@@ -17,3 +17,15 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"User('{self.first_name}', '{self.email}')"
+
+class Event(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    event_name = db.Column( db.String(120), nullable=False)
+    first_name = db.Column( db.String(120), nullable=False)
+    last_name = db.Column( db.String(120), nullable=False)
+    email = db.Column(db.String(120), nullable=False)
+    current_address = db.Column(db.String(250), nullable=False)
+    destination_address = db.Column(db.String(250), nullable=False)
+
+    def __repr__(self):
+        return f"Event('{self.event_name}', '{self.destination_address}')"

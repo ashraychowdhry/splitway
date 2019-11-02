@@ -18,42 +18,42 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>SplitWay &mdash;</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
-  <meta name="author" content="SplitWay" />
-
-  <link rel="shortcut icon" href="ftco-32x32.png">
-
-  <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display:400,400i|Roboto+Mono&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-
-
-  <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-
-  <!-- Theme Style -->
-  <link rel="stylesheet" href="css/style.css">
-
-</head>
+  <head>
+    <title>SplitWay &mdash; SplitWay</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Free-Template.co" />
+  
+    <link rel="shortcut icon" href="ftco-32x32.png">
+  
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display:400,400i|Roboto+Mono&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery.fancybox.min.css') }}">
+  
+  
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/fontawesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/flaticon/font/flaticon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/aos.css') }}">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+  
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  
+  </head>
 
 <body>
 
   <header role="banner">
     <nav class="navbar navbar-expand-lg  bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand " href="index.html">SplitWay</a>
+      <div class="container-fluid" style="background-color: black;">
+        <a class="navbar-brand " href="{{ url_for('home') }}">SplitWay</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
           aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,211 +64,176 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
         <div class="collapse navbar-collapse" id="navbarsExample05">
             <ul class="navbar-nav pl-md-5 ml-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="home.html">Home</a>
+                <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">What We Do</a>
+                <a class="nav-link" href="{{ url_for('home') }}">What We Do</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Get Started</a>
+                <a class="nav-link" href="{{ url_for('home') }}">Get Started</a>
               </li>
               
             </ul>
   
             <div class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html">Log In</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="register.html">Register</a>
-                  </li>
+                    <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+                </li> 
               
             </div>
   
           </div>
-          
       </div>
     </nav>
   </header>
   <!-- END header -->
-
-  <div class="slider-item overlay" data-stellar-background-ratio="0.5"
-    style="background-image: url('images/city_background.jpg');">
+<!--
+  <div class="slider-item innerp overlay" data-stellar-background-ratio="0.5"
+    style="background-image: url('images/hero_2.jpg');">
     <div class="container">
       <div class="row slider-text align-items-center justify-content-center text-center">
         <div class="col-lg-12 col-sm-12">
-          <h1 class="mb-4" data-aos="fade-up" data-aos-delay="">Find your ride</h1>
-          <p class="custom-breadcrumbs" data-aos="fade-up" data-aos-delay="100"><a href="index.html">Home</a> <span class="mx-3">/</span> Search</p>
+          <h1 class="mb-4">Register</h1>
+          <p class="custom-breadcrumbs"><a href="index.html">Home</a> <span class="mx-3">/</span>Sign Up</p>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 order-md-2" data-aos="fade-up" data-aos-delay="100">
-          <figure class="img-dotted-bg">
-            <img src="images/hero_2.jpg" alt="Image" class="img-fluid">
-          </figure>
-        </div>
-        <div class="col-md-5 mr-auto" data-aos="fade-up" data-aos-delay="">
-          <h2 class="mb-4 section-title"><strong>Begin here</strong> by entering your event information</h2>
-          <p>This will become a search field</p>
-          <p>This will become a search field</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="section">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-md-8 text-center" data-aos="fade-up" data-aos-delay="">
-          <h2 class="mb-4 section-title">Whats popular <strong>around the world</strong></h2>
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="media d-block media-custom text-center">
-            <a href="#"><img src="images/person_1.jpg" alt="Image Placeholder" class="img-fluid"></a>
-            <div class="media-body">
-              <h3 class="mt-0 text-black">Mellisa Howard</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus repudiandae amet.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="media d-block media-custom text-center">
-            <a href="#"><img src="images/person_2.jpg" alt="Image Placeholder" class="img-fluid"></a>
-            <div class="media-body">
-              <h3 class="mt-0 text-black">Mike Richardson</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus repudiandae amet.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="media d-block media-custom text-center">
-            <a href="#"><img src="images/person_1.jpg" alt="Image Placeholder" class="img-fluid"></a>
-            <div class="media-body">
-              <h3 class="mt-0 text-black">Laura Smith</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus repudiandae amet.</p>
-            </div>
-          </div>
-        </div>
-  
-      </div>
-  
-    </div>
-  </div>
-  <!-- END section -->
-
+-->
   <div class="section bg-light block-11">
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-md-8 text-center">
-          <h2 class="mb-4 section-title">Testimonial</h2>
-        </div>
-      </div>
-      <div class="nonloop-block-11 owl-carousel">
-        <div class="item">
-          <div class="block-33 h-100">
-            <div class="vcard d-flex mb-3">
-              <div class="image align-self-center"><img src="images/person_1.jpg" alt="Person here"></div>
-              <div class="name-text align-self-center">
-                <h2 class="heading">Carl Smith</h2>
-                <span class="meta">Customer Corp.</span>
-              </div>
-            </div>
-            <div class="text">
-              <blockquote>
-                <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat qui, ipsum debitis id
-                  reprehenderit ut soluta possimus consectetur asperiores totam veniam quasi molestiae. Animi doloribus
-                  accusamus eius ex laudantium vitae? &ldquo;</p>
-              </blockquote>
-            </div>
-          </div>
+          <h2 class="mb-4 section-title">Find your ride.</h2>
         </div>
 
-        <div class="item">
-          <div class="block-33 h-100">
-            <div class="vcard d-flex mb-3">
-              <div class="image align-self-center"><img src="images/person_2.jpg" alt="Person here"></div>
-              <div class="name-text align-self-center">
-                <h2 class="heading">Craig Darren</h2>
-                <span class="meta">Customer Corp.</span>
-              </div>
-            </div>
-            <div class="text">
-              <blockquote>
-                <p>&rdquo; Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, ut enim error molestias maxime
-                  deserunt voluptate doloribus nihil nesciunt id perferendis, doloremque earum architecto ab incidunt
-                  sunt
-                  corrupti. Consequuntur qui ullam voluptates sapiente quod esse eum. &ldquo;</p>
-              </blockquote>
-            </div>
+        <!--THIS IS THE REGISTER FORM-->
+  <div class="section">
+      <div class="container">
+        <div class="row mb-5">
+  
+          
+          <div class="col-12 mb-5 order-2">
+            <form method="POST" action="">
+              {{ form.hidden_tag() }}
+
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    {{ form.current_location.label(class="form-control-label") }}
+
+                      {% if form.current_location.errors %}
+                        {{ form.current_location(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                          {% for error in form.current_location.errors %}
+                              <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                      {% else %}
+                        {{ form.current_location(class="form-control form-control-lg") }}
+                      {% endif %}
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                      {{ form.destination.label(class="form-control-label") }}
+  
+                        {% if form.destination.errors %}
+                          {{ form.destination(class="form-control form-control-lg is-invalid") }}
+                          <div class="invalid-feedback">
+                            {% for error in form.destination.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                          </div>
+                        {% else %}
+                          {{ form.destination(class="form-control form-control-lg") }}
+                        {% endif %}
+                    </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 form-group">
+                        {{ form.time.label(class="form-control-label") }}
+    
+                          {% if form.time.errors %}
+                            {{ form.time(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                              {% for error in form.time.errors %}
+                                  <span>{{ error }}</span>
+                              {% endfor %}
+                            </div>
+                          {% else %}
+                            {{ form.time(class="form-control form-control-lg") }}
+                          {% endif %}
+                      </div>
+                    </div>
+
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    {{ form.submit(class="btn btn-outline-black px-3 py-3") }}
+                  </div>
+                </div>
+            </form>
           </div>
         </div>
-
-        <div class="item">
-          <div class="block-33 h-100">
-            <div class="vcard d-flex mb-3">
-              <div class="image align-self-center"><img src="images/person_1.jpg" alt="Person here"></div>
-              <div class="name-text align-self-center">
-                <h2 class="heading">John Smith</h2>
-                <span class="meta">Customer Corp.</span>
-              </div>
-            </div>
-            <div class="text">
-              <blockquote>
-                <p>&rdquo; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ab? Asperiores dolore
-                  blanditiis quis sapiente soluta aliquid officiis. &ldquo;</p>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="block-33 h-100">
-            <div class="vcard d-flex mb-3">
-              <div class="image align-self-center"><img src="images/person_2.jpg" alt="Person here"></div>
-              <div class="name-text align-self-center">
-                <h2 class="heading">John Smith</h2>
-                <span class="meta">Customer Corp.</span>
-              </div>
-            </div>
-            <div class="text">
-              <blockquote>
-                <p>&rdquo; Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, accusamus? Porro fugit culpa
-                  consequuntur dolorum. &ldquo;</p>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-
+         <!--END OF FORM CODE-->
       </div>
     </div>
   </div>
+<!--Random popular events part-->
+  <div class="section bg-light block-11">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8 text-center">
+            <h2 class="mb-4 section-title">What's trending</h2>
+          </div>
+        </div>
+        <div class="nonloop-block-11 owl-carousel">
+          <div class="item">
+            <div class="block-33 h-100">
+              <div class="vcard d-flex mb-3">
+                <div class="image align-self-center"><img src="images/person_1.jpg" alt="Person here"></div>
+                <div class="name-text align-self-center">
+                  <h2 class="heading">Carl Smith</h2>
+                  <span class="meta">Customer Corp.</span>
+                </div>
+              </div>
+              <div class="text">
+                <blockquote>
+                  <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat qui, ipsum debitis id
+                    reprehenderit ut soluta possimus consectetur asperiores totam veniam quasi molestiae. Animi doloribus
+                    accusamus eius ex laudantium vitae? &ldquo;</p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+  
+          <div class="item">
+            <div class="block-33 h-100">
+              <div class="vcard d-flex mb-3">
+                <div class="image align-self-center"><img src="images/person_2.jpg" alt="Person here"></div>
+                <div class="name-text align-self-center">
+                  <h2 class="heading">Craig Darren</h2>
+                  <span class="meta">Customer Corp.</span>
+                </div>
+              </div>
+              <div class="text">
+                <blockquote>
+                  <p>&rdquo; Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, ut enim error molestias maxime
+                    deserunt voluptate doloribus nihil nesciunt id perferendis, doloremque earum architecto ab incidunt
+                    sunt
+                    corrupti. Consequuntur qui ullam voluptates sapiente quod esse eum. &ldquo;</p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+    <!--END OF Random popular events part-->
   <!-- END .block-4 -->
   </div>
-
-  <div class="bg-primary py-5">
-    <div class="container text-center">
-      <div class="row justify-content-center">
-        <div class="col-lg-7">
-          <h3 class="text-white mb-2 font-weight-normal" data-aos="fade-right" data-aos-delay="">Let's do more together</h3>
-          <p class="text-white mb-4" data-aos="fade-right" data-aos-delay="100">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            
-          <p class="mb-0" data-aos="fade-right" data-aos-delay="200"><a href="contact.html" class="btn btn-outline-white px-4 py-3">Get In Touch!</a></p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
@@ -321,7 +286,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
         <div class="col-12 text-md-center text-left">
           <!-- Link back to Free-Template.co can't be removed. Template is licensed under CC BY 3.0. -->
               <p class="copyright"><small>&copy;
-              <script>document.write(new Date().getFullYear());</script> Cardboard. All Rights Reserved. Design by <a
+                  <script>document.write(new Date().getFullYear());</script> Cardboard. All Rights Reserved. Design by <a
                     href="https://free-template.co" target="_blank">Free-Template.co</a></small></p>
         </div>
       </div>
@@ -335,16 +300,16 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
       <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
         stroke="#ffc107" /></svg></div>
 
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.fancybox.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/main.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-migrate-3.0.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.fancybox.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/aos.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
 </html>
