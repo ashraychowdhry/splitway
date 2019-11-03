@@ -57,7 +57,7 @@ def search():
             time = int(abs(eventTime-userTime))
             currentDistance = getDistance(thisUserCurrentLocation, eventCurrentAddress)
             destinationDistance = getDistance(thisUserDestination, eventDestinationAddress)
-            if currentDistance < 2 and destinationDistance < 2 and time < 15 and eventYear == userYear and eventMonth == userMonth and eventDay == userDay:
+            if currentDistance < 5 and destinationDistance < 5 and time < 15 and eventYear == userYear and eventMonth == userMonth and eventDay == userDay:
                 eventList.append(event)
         eventListTruncate = []
         listSize = len(eventList)
