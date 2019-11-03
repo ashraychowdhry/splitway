@@ -1622,3 +1622,11 @@ figure {
   position: -webkit-sticky;
   top: 0; /* required */ 
 }
+
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
