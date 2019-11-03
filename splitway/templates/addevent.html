@@ -67,7 +67,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
                 <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('addevent') }}">What We Do</a>
+                <a class="nav-link" href="{{ url_for('home') }}">What We Do</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('home') }}">Get Started</a>
@@ -76,9 +76,9 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
             </ul>
   
             <div class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
-                </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+              </li>
               
             </div>
   
@@ -104,144 +104,96 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-md-8 text-center">
-          <h2 class="mb-4 section-title">Find your ride.</h2>
+          <h2 class="mb-4 section-title">Can't find what you're looking for? Add a new event below.</h2>
         </div>
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-          {% for message in messages %}
-          <div class="alert alert-warning alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-          {{message}}
-          </div>
-          {% endfor %}
-        {% endif %}
-      {% endwith %}
-    </div>
-        <!--THIS IS THE REGISTER FORM-->
-  <div class="section">
-      <div class="container">
-        <div class="row mb-5">
-  
-          
-          <div class="col-12 mb-5 order-2">
-            <form method="POST" action="">
-              {{ form.hidden_tag() }}
 
-                <div class="row">
-                  <div class="col-md-12 form-group">
-                    {{ form.current_location.label(class="form-control-label") }}
-
-                      {% if form.current_location.errors %}
-                        {{ form.current_location(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                          {% for error in form.current_location.errors %}
-                              <span>{{ error }}</span>
-                          {% endfor %}
-                        </div>
-                      {% else %}
-                        {{ form.current_location(class="form-control form-control-lg") }}
-                      {% endif %}
-                  </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12 form-group">
-                      {{ form.destination.label(class="form-control-label") }}
-  
-                        {% if form.destination.errors %}
-                          {{ form.destination(class="form-control form-control-lg is-invalid") }}
-                          <div class="invalid-feedback">
-                            {% for error in form.destination.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                          </div>
-                        {% else %}
-                          {{ form.destination(class="form-control form-control-lg") }}
-                        {% endif %}
-                    </div>
-                  </div>
-
-                  <div class="row">
-                      <div class="col-md-12 form-group">
-                        {{ form.time.label(class="form-control-label") }}
+        <!--THIS IS THE ADD EVENT FORM-->
+        <div class="section">
+          <div class="container">
+            <div class="row mb-5">
+      
+              
+              <div class="col-12 mb-5 order-2">
+                <form method="POST" action="">
+                  {{ form.hidden_tag() }}
     
-                          {% if form.time.errors %}
-                            {{ form.time(class="form-control form-control-lg is-invalid") }}
+                    <div class="row">
+                      <div class="col-md-6 form-group">
+                        {{ form.current_location.label(class="form-control-label") }}
+    
+                          {% if form.current_location.errors %}
+                            {{ form.current_location(class="form-control form-control-lg is-invalid") }}
                             <div class="invalid-feedback">
-                              {% for error in form.time.errors %}
+                              {% for error in form.current_location.errors %}
                                   <span>{{ error }}</span>
                               {% endfor %}
                             </div>
                           {% else %}
-                            {{ form.time(class="form-control form-control-lg") }}
+                            {{ form.current_location(class="form-control form-control-lg") }}
                           {% endif %}
                       </div>
-                    </div>
-
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    {{ form.submit(class="btn btn-outline-black px-3 py-3") }}
-                  </div>
-                </div>
-            </form>
-          </div>
-        </div>
-         <!--END OF FORM CODE-->
+                        <div class="col-md-6 form-group">
+                          {{ form.destination.label(class="form-control-label") }}
       
+                            {% if form.destination.errors %}
+                              {{ form.destination(class="form-control form-control-lg is-invalid") }}
+                              <div class="invalid-feedback">
+                                {% for error in form.destination.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                              </div>
+                            {% else %}
+                              {{ form.destination(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                      </div>
     
-  </div>
-<!--Random popular events part-->
-  <div class="section bg-light block-11">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-8 text-center">
-            <h2 class="mb-4 section-title">What's trending</h2>
-          </div>
-        </div>
-        <div class="nonloop-block-11 owl-carousel">
-          <div class="item">
-            <div class="block-33 h-100">
-              <div class="vcard d-flex mb-3">
-                <div class="image align-self-center"><img src="images/person_1.jpg" alt="Person here"></div>
-                <div class="name-text align-self-center">
-                  <h2 class="heading">Carl Smith</h2>
-                  <span class="meta">Customer Corp.</span>
-                </div>
-              </div>
-              <div class="text">
-                <blockquote>
-                  <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat qui, ipsum debitis id
-                    reprehenderit ut soluta possimus consectetur asperiores totam veniam quasi molestiae. Animi doloribus
-                    accusamus eius ex laudantium vitae? &ldquo;</p>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-  
-          <div class="item">
-            <div class="block-33 h-100">
-              <div class="vcard d-flex mb-3">
-                <div class="image align-self-center"><img src="images/person_2.jpg" alt="Person here"></div>
-                <div class="name-text align-self-center">
-                  <h2 class="heading">Craig Darren</h2>
-                  <span class="meta">Customer Corp.</span>
-                </div>
-              </div>
-              <div class="text">
-                <blockquote>
-                  <p>&rdquo; Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, ut enim error molestias maxime
-                    deserunt voluptate doloribus nihil nesciunt id perferendis, doloremque earum architecto ab incidunt
-                    sunt
-                    corrupti. Consequuntur qui ullam voluptates sapiente quod esse eum. &ldquo;</p>
-                </blockquote>
+                      <div class="row">
+                          <div class="col-md-12 form-group">
+                            {{ form.time.label(class="form-control-label") }}
+        
+                              {% if form.time.errors %}
+                                {{ form.time(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                  {% for error in form.time.errors %}
+                                      <span>{{ error }}</span>
+                                  {% endfor %}
+                                </div>
+                              {% else %}
+                                {{ form.time(class="form-control form-control-lg") }}
+                              {% endif %}
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12 form-group">
+                            {{ form.eventName.label(class="form-control-label") }}
+        
+                              {% if form.eventName.errors %}
+                                {{ form.eventName(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                  {% for error in form.eventName.errors %}
+                                      <span>{{ error }}</span>
+                                  {% endfor %}
+                                </div>
+                              {% else %}
+                                {{ form.eventName(class="form-control form-control-lg") }}
+                              {% endif %}
+                          </div>
+                        </div>
+    
+                    <div class="row">
+                      <div class="col-md-6 form-group">
+                        {{ form.submit(class="btn btn-outline-black px-3 py-3") }}
+                      </div>
+                    </div>
+                </form>
               </div>
             </div>
-          </div>
-  
-        </div>
+         <!--END OF FORM CODE-->
       </div>
     </div>
-    <!--END OF Random popular events part-->
+  </div>
   <!-- END .block-4 -->
   </div>
 
@@ -249,8 +201,15 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
     <div class="container">
       <div class="row mb-5">
         <div class="col-md-4 mb-5">
-          <h3 class="mb-4">About SplitWay</h3>
-          <p class="mb-5">Web Application to assist in university social development by helping find matches with similar rideshare interests.</p>
+          <h3 class="mb-4">About Craft</h3>
+          <p class="mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias nihil numquam aspernatur
+            inventore sint eligendi nostrum!</p>
+          <ul class="list-unstyled footer-link d-flex footer-social">
+            <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+          </ul>
 
         </div>
         <div class="col-md-5 mb-5 pl-md-5">
@@ -259,13 +218,13 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
             <ul class="list-unstyled footer-link quick-contact">
               <li class="d-block">
                 <span class="d-block caption">Address:</span>
-                <span>711 Techwood Dr NW, Atlanta, United States</span>
+                <span>34 Street Name, City Name Here, United States</span>
               </li>
               <li class="d-block">
-                <span class="d-block caption">Telephone:</span><span>+1 404 XXX XXXX</span>
+                <span class="d-block caption">Telephone:</span><span>+1 242 4942 290</span>
               </li>
               <li class="d-block">
-                <span class="d-block caption">Email:</span><span>splitway@splitway.com</span>
+                <span class="d-block caption">Email:</span><span>info@yourdomain.com</span>
               </li>
             </ul>
           </div>
@@ -275,9 +234,10 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
         <div class="col-md-3 mb-5">
           <h3 class="mb-4">Quick Links</h3>
           <ul class="list-unstyled footer-link">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('home') }}">What We Do</a></li>
-            <li><a href="{{ url_for('search') }}">Search</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Disclaimers</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
         <div class="col-md-3">
@@ -286,6 +246,10 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
       </div>
       <div class="row">
         <div class="col-12 text-md-center text-left">
+          <!-- Link back to Free-Template.co can't be removed. Template is licensed under CC BY 3.0. -->
+              <p class="copyright"><small>&copy;
+                  <script>document.write(new Date().getFullYear());</script> Cardboard. All Rights Reserved. Design by <a
+                    href="https://free-template.co" target="_blank">Free-Template.co</a></small></p>
         </div>
       </div>
     </div>
