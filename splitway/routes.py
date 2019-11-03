@@ -28,18 +28,18 @@ def search():
     form = SearchForm()
     if form.validate_on_submit():
        #INSERT SEARCH ALGORITHM HERE
-       eventList = []
-       thisUserDestination = form.destination.data
-       thisUserCurrenLocation = form.current_location.data
-       thisUserTime = (str)(form.time.data)
-       userYear = thisUserTime[0:4]
-       userMonth = thisUserTime[5:7]
-       userDay = thisUserTime[8:10]
-       userHour = thisUserTime[11:13]
-       userMinute = thisUserTime[14:16]
-       userTime = int(userHour) * 60 + int(userMinute)
-       query = Event.query.all()
-       for event in query:
+        eventList = []
+        thisUserDestination = form.destination.data
+        thisUserCurrenLocation = form.current_location.data
+        thisUserTime = (str)(form.time.data)
+        userYear = thisUserTime[0:4]
+        userMonth = thisUserTime[5:7]
+        userDay = thisUserTime[8:10]
+        userHour = thisUserTime[11:13]
+        userMinute = thisUserTime[14:16]
+        userTime = int(userHour) * 60 + int(userMinute)
+        query = Event.query.all()
+        for event in query:
             eventCurrentAddress = event[4]
             eventDestinationAddress = event[5]
             eventTime = (str)(event[6])
