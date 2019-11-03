@@ -122,38 +122,89 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 
         <div class="container">
 
+            <div class="row">
+                <div class="col-lg-10 mb-4">
+                  <div class="service" data-aos="fade-up" data-aos-delay="200">
+                      {%if eventList |length == 0%}
+                    <h3>
+                        Sorry, there aren't any events around you :(
+                      </h3>
+                    {%endif%}
+                  </div>
+                </div>
+            </div>
           <div class="row">
-            <div class="col-lg-3 mb-4">
+            <div class="col-lg-10 mb-4">
               <div class="service" data-aos="fade-up" data-aos-delay="">
-                <h3>Search</h3>
-                <p>YEET bitcht this ur first result</p>
+                  {%if eventList |length > 0%}
+                <h3>
+                    {{eventList[0].event_name}}
+                  </h3>
+                <p>
+                  Contact Name: {{eventList[0].first_name}} <br>
+                  Email: {{eventList[0].email}} <br>
+                  Destination: {{eventList[0].destination_address}} <br>
+                  Time: {{eventList[0].time}}
+
+                </p>
+                {%endif%}
               </div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-lg-3 mb-4">
+            <div class="col-lg-10 mb-4">
               <div class="service" data-aos="fade-up" data-aos-delay="100">
-                <h3>Locate</h3>
-                <p>second eemfenenreljfpvdfpov</p>
+                  {%if eventList |length > 1%}
+                <h3>
+                    {{eventList[1].event_name}}
+                  </h3>
+                <p>
+                  Contact Name: {{eventList[1].first_name}} <br>
+                  Email: {{eventList[1].email}} <br>
+                  Destination: {{eventList[1].destination_address}} <br>
+                  Time: {{eventList[1].time}}
+
+                </p>
+                {%endif%}
               </div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-lg-3 mb-4">
+            <div class="col-lg-10 mb-4">
               <div class="service" data-aos="fade-up" data-aos-delay="200">
-                <h3>Compare</h3>
-                <p>icky ass ho </p>
+                  {%if eventList |length > 2%}
+                <h3>
+                    {{eventList[2].event_name}}
+                  </h3>
+                <p>
+                  Contact Name: {{eventList[2].first_name}} <br>
+                  Email: {{eventList[2].email}} <br>
+                  Destination: {{eventList[2].destination_address}} <br>
+                  Time: {{eventList[2].time}}
+
+                </p>
+                {%endif%}
               </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-3 mb-4">
+            <div class="col-lg-10 mb-4">
               <div class="service" data-aos="fade-up" data-aos-delay="300">
-                <h3>Attend</h3>
-                <p>ocsdocsocjspdkcpsdkcpskod</p>
+                  {%if eventList |length > 3%}
+                <h3>
+                    {{eventList[3].event_name}}
+                  </h3>
+                <p>
+                  Contact Name: {{eventList[3].first_name}} <br>
+                  Email: {{eventList[3].email}} <br>
+                  Destination: {{eventList[3].destination_address}} <br>
+                  Time: {{eventList[3].time}}
+
+                </p>
+                {%endif%}
               </div>
             </div>
           </div>

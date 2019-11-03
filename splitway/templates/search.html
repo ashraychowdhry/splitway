@@ -64,22 +64,37 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
         <div class="collapse navbar-collapse" id="navbarsExample05">
             <ul class="navbar-nav pl-md-5 ml-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
+                <a class="nav-link" href="{{ url_for('home') }}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('addevent') }}">What We Do</a>
+                <a class="nav-link" href="{{ url_for('home') }}">What We Do</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('home') }}">Get Started</a>
+                <a class="nav-link" href="{{ url_for('search') }}">Search</a>
               </li>
               
             </ul>
   
+            {% if current_user.is_authenticated %}
             <div class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
-                </li> 
+                    <a class="nav-link active">{{ current_user.first_name }}</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+                  </li> 
+            </div>
+            {% else %}
+            <div class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                  </li>
               
+            </div>
+            {% endif %}
             </div>
   
           </div>
@@ -190,106 +205,54 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
       
     
   </div>
-<!--Random popular events part-->
-  <div class="section bg-light block-11">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-8 text-center">
-            <h2 class="mb-4 section-title">What's trending</h2>
-          </div>
-        </div>
-        <div class="nonloop-block-11 owl-carousel">
-          <div class="item">
-            <div class="block-33 h-100">
-              <div class="vcard d-flex mb-3">
-                <div class="image align-self-center"><img src="images/person_1.jpg" alt="Person here"></div>
-                <div class="name-text align-self-center">
-                  <h2 class="heading">Carl Smith</h2>
-                  <span class="meta">Customer Corp.</span>
-                </div>
-              </div>
-              <div class="text">
-                <blockquote>
-                  <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat qui, ipsum debitis id
-                    reprehenderit ut soluta possimus consectetur asperiores totam veniam quasi molestiae. Animi doloribus
-                    accusamus eius ex laudantium vitae? &ldquo;</p>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-  
-          <div class="item">
-            <div class="block-33 h-100">
-              <div class="vcard d-flex mb-3">
-                <div class="image align-self-center"><img src="images/person_2.jpg" alt="Person here"></div>
-                <div class="name-text align-self-center">
-                  <h2 class="heading">Craig Darren</h2>
-                  <span class="meta">Customer Corp.</span>
-                </div>
-              </div>
-              <div class="text">
-                <blockquote>
-                  <p>&rdquo; Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, ut enim error molestias maxime
-                    deserunt voluptate doloribus nihil nesciunt id perferendis, doloremque earum architecto ab incidunt
-                    sunt
-                    corrupti. Consequuntur qui ullam voluptates sapiente quod esse eum. &ldquo;</p>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-  
-        </div>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-4 mb-5">
+        <h3 class="mb-4">About SplitWay</h3>
+        <p class="mb-5">Web Application to assist in university social development by helping find matches with similar rideshare interests.</p>
+
       </div>
-    </div>
-    <!--END OF Random popular events part-->
-  <!-- END .block-4 -->
-  </div>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-md-4 mb-5">
-          <h3 class="mb-4">About SplitWay</h3>
-          <p class="mb-5">Web Application to assist in university social development by helping find matches with similar rideshare interests.</p>
-
-        </div>
-        <div class="col-md-5 mb-5 pl-md-5">
-          <div class="mb-5">
-            <h3 class="mb-4">Contact Info</h3>
-            <ul class="list-unstyled footer-link quick-contact">
-              <li class="d-block">
-                <span class="d-block caption">Address:</span>
-                <span>711 Techwood Dr NW, Atlanta, United States</span>
-              </li>
-              <li class="d-block">
-                <span class="d-block caption">Telephone:</span><span>+1 404 XXX XXXX</span>
-              </li>
-              <li class="d-block">
-                <span class="d-block caption">Email:</span><span>splitway@splitway.com</span>
-              </li>
-            </ul>
-          </div>
-
-          
-        </div>
-        <div class="col-md-3 mb-5">
-          <h3 class="mb-4">Quick Links</h3>
-          <ul class="list-unstyled footer-link">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('home') }}">What We Do</a></li>
-            <li><a href="{{ url_for('search') }}">Search</a></li>
+      <div class="col-md-5 mb-5 pl-md-5">
+        <div class="mb-5">
+          <h3 class="mb-4">Contact Info</h3>
+          <ul class="list-unstyled footer-link quick-contact">
+            <li class="d-block">
+              <span class="d-block caption">Address:</span>
+              <span class="caption-text">711 Techwood Drive, Atlanta, United States</span>
+            </li>
+            <li class="d-block">
+              <span class="d-block caption">Telephone:</span><span class="caption-text">+1 404 XXX XXXX</span>
+            </li>
+            <li class="d-block">
+              <span class="d-block caption">Email:</span><span class="caption-text">splitway@splitway.com</span>
+            </li>
           </ul>
         </div>
-        <div class="col-md-3">
 
-        </div>
+        
       </div>
-      <div class="row">
-        <div class="col-12 text-md-center text-left">
-        </div>
+      <div class="col-md-3 mb-5">
+        <h3 class="mb-4">Quick Links</h3>
+        <ul class="list-unstyled footer-link">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="#WhatWeDo">What We Do</a></li>
+          <li><a href="{{ url_for('search') }}">Search</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+
       </div>
     </div>
-  </footer>
+    <div class="row">
+      <div class="col-12 text-md-center text-left">
+      </div>
+    </div>
+  </div>
+</footer>
+
   <!-- END footer -->
 
   <!-- loader -->

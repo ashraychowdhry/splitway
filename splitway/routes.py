@@ -24,7 +24,7 @@ def getDistance(address1, address2):
     with urllib.request.urlopen(distanceURL) as url:
         data = json.loads(url.read().decode())
     distance = data["rows"][0]["elements"][0]["distance"]["value"]
-    distance = distance / 1609.344
+    distance = float(distance) / 1609.344
     return distance
 @app.route("/search", methods=['GET', 'POST'])
 def search():
@@ -35,7 +35,7 @@ def search():
        #INSERT SEARCH ALGORITHM HERE
         eventList = []
         thisUserDestination = form.destination.data
-        thisUserCurrenLocation = form.current_location.data
+        thisUserCurrentLocation = form.current_location.data
         thisUserTime = (str)(form.time.data)
         userYear = thisUserTime[0:4]
         userMonth = thisUserTime[5:7]
@@ -45,24 +45,28 @@ def search():
         userTime = int(userHour) * 60 + int(userMinute)
         query = Event.query.all()
         for event in query:
-            eventCurrentAddress = event["current_location"]
-            eventDestinationAddress = event["destination"]
-            eventTime = (str)(event["time"])
+            eventCurrentAddress = event.current_address
+            eventDestinationAddress = event.destination_address
+            eventTime = (str)(event.time)
             eventYear = eventTime[0:4]
             eventMonth = eventTime[5:7]
             eventDay = eventTime[8:10]
             eventHour = eventTime[11:13]
             eventMinute = eventTime[14:16]
             eventTime = int(eventHour) * 60 + int(eventMinute)
-            time = abs(eventTime-userTime)
-            currentDistance = getDistance(thisUserCurrenLocation, eventCurrentAddress)
+            time = int(abs(eventTime-userTime))
+            currentDistance = getDistance(thisUserCurrentLocation, eventCurrentAddress)
             destinationDistance = getDistance(thisUserDestination, eventDestinationAddress)
-            if currentDistance < .5 and destinationDistance < .5 and time < 15 and eventYear == userYear and eventMonth == userMonth and eventDay == userDay:
-                eventList.add(event)
+            if currentDistance < 5 and destinationDistance < 5 and time < 15 and eventYear == userYear and eventMonth == userMonth and eventDay == userDay:
+                eventList.append(event)
         eventListTruncate = []
+        listSize = len(eventList)
         for i in range(4):
-            eventListTruncate = eventList[i]
-        return render_template('results.html', eventList = evenListTruncated)
+            try:
+                eventListTruncate.append(eventList[i])
+            except:
+                pass
+        return render_template('results.html', eventList = eventListTruncate, listSize = listSize)
     return render_template('search.html', form=form)
 
 @app.route("/register", methods=['GET', 'POST'])
