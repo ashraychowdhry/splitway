@@ -159,6 +159,7 @@ header {
 			letter-spacing: .1rem;
 			text-transform: uppercase;
 			font-weight: 300;
+			scroll-behavior: smooth;
 			color: $white;
 			@include media-breakpoint-down(md) {
 				padding: .5rem 0rem!important;
@@ -1630,11 +1631,10 @@ form
     margin-right: auto;
     text-align: left;
 }
+html {
+	scroll-behavior: smooth;
+  }
 
-#test1::before {
-	display: block;
-	content: " ";
-	margin-top: -65px;
-	height: 65px;
-	visibility: hidden;
+  .module {
+	scroll-behavior: [ auto | smooth ];
   }
