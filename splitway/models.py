@@ -27,5 +27,5 @@ class Event(db.Model):
     destination_address = db.Column(db.String(250), nullable=False)
     time = db.Column(db.String(250), nullable=False)
     def __repr__(self):
-        return ({"even_name":self.event_name,"first_name":self.first_name,"email":self.email,"current_address":self.current_address,"destination_address":self.destination_address,"time":self.time})
+        return ({"event_name":self.event_name,"first_name":self.first_name,"email":self.email,"current_address":self.current_address,"destination_address":self.destination_address,"time":self.time})
 db.create_all()
