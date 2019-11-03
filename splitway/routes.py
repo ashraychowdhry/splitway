@@ -45,9 +45,9 @@ def search():
         userTime = int(userHour) * 60 + int(userMinute)
         query = Event.query.all()
         for event in query:
-            eventCurrentAddress = event[4]
-            eventDestinationAddress = event[5]
-            eventTime = (str)(event[6])
+            eventCurrentAddress = event["current_location"]
+            eventDestinationAddress = event["destination"]
+            eventTime = (str)(event["time"])
             eventYear = eventTime[0:4]
             eventMonth = eventTime[5:7]
             eventDay = eventTime[8:10]
