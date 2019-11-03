@@ -1,6 +1,6 @@
 from flask import render_template, url_for, flash, redirect, request
 from splitway import app, db, bcrypt
-from splitway.forms import RegistrationForm, LoginForm, SearchForm
+from splitway.forms import RegistrationForm, LoginForm, SearchForm, EventForm
 from splitway.models import User, Event
 from flask_login import login_user, current_user, logout_user, login_required
 import requests
@@ -73,6 +73,20 @@ def register():
         flash('Your account has been created! You are now able to log in', 'success')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+@app.route("/addevent", methods=['GET', 'POST'])
+def addevent():
+    if current_user.is_authenticated == False:
+        return redirect(url_for('login'))
+    form = EventForm()
+    if form.validate_on_submit():
+        stringtime = str(form.time.data)
+        event = Event(event_name=form.eventName.data, first_name=current_user.first_name, current_address=form.current_location.data, destination_address=form.destination.data, time=stringtime, email=(current_user.email))
+        db.session.add(event)
+        db.session.commit()
+        flash('Your event has been created! People can now see your event and reach out.', 'success')
+        return redirect(url_for('search'))
+    return render_template('addevent.html', title='Add Event', form=form)
 
 
 @app.route("/login", methods=['GET', 'POST'])

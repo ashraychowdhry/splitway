@@ -37,12 +37,12 @@ class SearchForm(FlaskForm):
     time = DateTimeLocalField('Date/Time', format="%Y-%m-%dT%H:%M")
     #time = StringField('Date/Time MM/DD/YYYY HH:MM', validators=[DataRequired()])
     submit = SubmitField('Search')
+
 class EventForm(FlaskForm):
-    eventName = StringField('Event Name', validators=[DataRequired])
+    eventName = StringField('Event Name', validators=[DataRequired()])
     current_location = StringField('Current Location', validators=[DataRequired()])
     destination = StringField('Destination', validators=[DataRequired()])
     time = DateTimeLocalField('Date/Time', format="%Y-%m-%dT%H:%M")
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    #time = implement this here
+    #email = StringField('Email', validators=[DataRequired(), Email()])
     submit = SubmitField('Submit Event')
     
