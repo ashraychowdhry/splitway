@@ -90,23 +90,23 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
     </nav>
   </header>
   <!-- END header -->
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    {% for message in messages %}
-    <div class="alert alert-warning alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-    {{message}}
-    </div>
-    {% endfor %}
-  {% endif %}
-{% endwith %}
+
   <div class="section bg-light block-11">
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-md-8 text-center">
           <h2 class="mb-4 section-title">Log In</h2>
         </div>
-
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          {{message}}
+          </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
         <!--THIS IS THE LOG IN FORM-->
   <div class="section">
       <div class="container">
