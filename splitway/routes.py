@@ -35,7 +35,7 @@ def search():
        #INSERT SEARCH ALGORITHM HERE
         eventList = []
         thisUserDestination = form.destination.data
-        thisUserCurrenLocation = form.current_location.data
+        thisUserCurrentLocation = form.current_location.data
         thisUserTime = (str)(form.time.data)
         userYear = thisUserTime[0:4]
         userMonth = thisUserTime[5:7]
@@ -55,15 +55,15 @@ def search():
             eventMinute = eventTime[14:16]
             eventTime = int(eventHour) * 60 + int(eventMinute)
             time = int(abs(eventTime-userTime))
-            currentDistance = getDistance(thisUserCurrenLocation, eventCurrentAddress)
+            currentDistance = getDistance(thisUserCurrentLocation, eventCurrentAddress)
             destinationDistance = getDistance(thisUserDestination, eventDestinationAddress)
-            if currentDistance < 1000 and destinationDistance < 1000 and time < 15 and eventYear == userYear and eventMonth == userMonth and eventDay == userDay:
+            if currentDistance < 2 and destinationDistance < 2 and time < 15 and eventYear == userYear and eventMonth == userMonth and eventDay == userDay:
                 eventList.append(event)
         eventListTruncate = []
         listSize = len(eventList)
         for i in range(4):
             try:
-                eventListTruncate = eventList[i]
+                eventListTruncate.append(eventList[i])
             except:
                 pass
         return render_template('results.html', eventList = eventListTruncate, listSize = listSize)
