@@ -70,7 +70,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
               <a class="nav-link" href="{{ url_for('search') }}">What We Do</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('home') }}">Get Started</a>
+              <a class="nav-link" href="{{ url_for('search') }}">Get Started</a>
             </li>
             
           </ul>
@@ -119,10 +119,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
           <div>
             <p data-aos="fade-up" data-aos="fade-up" data-aos-delay="">Make a friend. Save some money.<br><br><br><br><br><br></p>
           </div>
-          <p class="mb-0" data-aos="fade-right" data-aos-delay="200"><a href="login.html" class="btn btn-outline-white px-4 py-3">Get Started</a></p>
-          <div class="btn-play-wrap mx-auto" data-aos="fade-up" data-aos-delay="200">
-            
-          </div>
+          <p class="mb-0" data-aos="fade-right" data-aos-delay="200"><a href="{{ url_for('search') }}" class="btn btn-light px-4 py-3">Get Started</a></p>
 
         </div>
       </div>
