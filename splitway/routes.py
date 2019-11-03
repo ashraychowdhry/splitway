@@ -58,15 +58,15 @@ def search():
             currentDistance = getDistance(thisUserCurrenLocation, eventCurrentAddress)
             destinationDistance = getDistance(thisUserDestination, eventDestinationAddress)
             if currentDistance < 1000 and destinationDistance < 1000 and time < 15 and eventYear == userYear and eventMonth == userMonth and eventDay == userDay:
-                eventList.add(event)
+                eventList.append(event)
         eventListTruncate = []
         listSize = len(eventList)
         for i in range(4):
             try:
                 eventListTruncate = eventList[i]
             except:
-                break
-        return render_template('results.html', eventList = eventListTruncate, listSize = listSize),
+                pass
+        return render_template('results.html', eventList = eventListTruncate, listSize = listSize)
     return render_template('search.html', form=form)
 
 @app.route("/register", methods=['GET', 'POST'])
