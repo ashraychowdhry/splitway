@@ -12,6 +12,11 @@ import datetime
 @app.route("/home")
 def home():
     return render_template('home.html')
+
+@app.route("/results")
+def results():
+    return render_template('results.html')
+
 def getDistance(address1, address2):
     address1 = address1.replace(" ", "+")
     address2 = address2.replace(" ", "+")
